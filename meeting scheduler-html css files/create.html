@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		h1.contact {
+			border-bottom: 3px solid #cc9900;
+			color: #996600;
+			font-size: 30px;
+		}
+		table.contact, th.contact , td.contact  {
+			border: 1px solid grey;
+			border-collapse: collapse;
+			padding: 5px;
+		}
+		table.contact tr:nth-child(odd)	{
+			background-color: #f1f1f1;
+		}
+		table.contact tr:nth-child(even) {
+			background-color: #ffffff;
+		}
+		</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<!-- Le styles -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	 <link rel="stylesheet" href="main.css">
+	 <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <link href="bootstrap-table.css"></link>
+	<script src="bootstrap-table.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="jquery.bootstrap.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="test-butoon-rest.js"></script>
+	<!--<script src="json-create.js"></script> -->
+	<script src="http://cdn.jsdelivr.net/bootstrap.table/1.8.1/bootstrap-table-all.min.js"></script>
+	<script src="nav-tables.js"></script>
+	
+	</head>
+	<body onload="init()">
+		<div class="container">
+			<div class="nav">
+				<ul class="pull-left">
+					<li>Meeting Scheduler</li>
+				</ul>
+				<ul class="pull-right">
+					<li><a href="#">Sign Up</a></li>
+					<li><a href="login.html">Log In</a></li>
+                </ul>
+			</div>
+	
+	<!-------->
+		<div id="content">
+			<ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+				<li role="presentation" class="active"><a data-toggle="tab" href="#general">1. General</a></li>
+				<li role="presentation"><a data-toggle="tab" href="#datep">2. Date proposal</a></li>
+				<li role="presentation"><a data-toggle="tab" href="#timep">3. Time proposal</a></li>
+				<li role="presentation"><a href="#invite" data-toggle="tab">4. Invite</a></li>
+			</ul>
+		<div class="tab-content" id="my-tab-content">
+			<div id="general" class="tab-pane fade in active">
+				<form role="form">	
+					
+					<div class="form-group">
+					<div class="col-xs-4"></div>
+						<div class="col-xs-4">
+							<label for="tit">Title</label>
+							<input type="text" class="form-control" id="tit">
+						</div> 
+					<div class="col-xs-4"></div>
+					</div>  
+					<br><br><br><br>
+					
+					<div class="form-group">
+					<div class="col-xs-4"></div>
+						<div class="col-xs-4">
+						<label for="loc">Locations list</label>
+							<p>(hold shift for multiple selection)</p>
+							  <select multiple class="form-control" id="loc">
+								<option>location 1</option>
+								<option>location 2</option>
+								<option>location 3</option>
+								<option>location 4</option>
+								<option>location 5</option>
+							  </select>
+						</div>
+					<div class="col-xs-4"></div>	
+					</div>
+					<br>
+					<br><br><br><br><br><br><br>
+					<div class="form-group">
+					<div class="col-xs-3"></div>
+						<div class="col-xs-6">
+							<label for="desc">Description (optional)</label>
+							<textarea class="form-control" rows="5" id="desc"></textarea>
+						</div>
+					<div class="col-xs-3"></div>
+					</div>
+					<br><br><br><br><br><br>		
+					<nav>
+					  <ul class="pager">
+						<li><a href="#datep">Next</a></li>
+					  </ul>
+					</nav>
+				</form>			
+			</div>
+			<div id="datep" class="tab-pane fade">
+				<h2>Date proposals</h2>
+				<p>orange orange orange orange orange</p>
+				
+				<nav>
+				  <ul class="pager">
+					<li><a href="#general">Back</a></li>
+					<li><a href="#timep">Next</a></li>
+				  </ul>
+				</nav>
+			</div>
+			<div id="timep" class="tab-pane fade">
+				<h2>Time proposals</h2>
+				<p>yellow yellow yellow yellow yellow</p>
+				
+				<nav>
+				  <ul class="pager">
+					<li><a href="#datep">Back</a></li>
+					<li><a href="#invite">Next</a></li>
+				  </ul>
+				</nav>
+				
+			</div>
+			<div id="invite" class="tab-pane fade">
+				<h2 class="contact">Invite participants</h2>
+					<h3 class="contact">Please select participants</h3>
+					<div class="contact"> 
+						<table class="contact" id=contactTable></table>
+					</div>
+						
+				<nav>
+				  <ul class="pager">
+					<li><a href="#timep">Back</a></li>
+					<li><a href="finish.html">Finish</a></li>
+				  </ul>
+				</nav>
+			</div>
+			
+		</div>
+	</div>
+	 
+	 
+	<script>
+		
+		$(document).ready(function(){
+			$(".nav-tabs a").click(function(){
+				$(this).tab('show');
+			});
+			$(".pager a").click(function(){
+				$(this).tab('show');
+			});
+			/*
+			$("#invite").click(function(){
+				$(this).inviteTable();
+			});
+			*/
+			/*$("#contactlist").html('<option>'+Hello world+'</option>');*/
+		});
+	</script>    
+	
+		</div> <!-- container -->
+	</body>
+</html>

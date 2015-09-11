@@ -1,0 +1,26 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>Rest Service Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="test-butoon-rest.js"></script>
+ </head>
+  <body  onload="init()">
+   <h1>Call Get User service </h1>
+   <table>
+   <tr>
+       <td>Enter User ID :  </td>
+       <td><input type="text" id="userId" size="10"/>  <input type="button" value="Get Details" onclick="getdetails()"/>
+		   </tr>
+		   <tr>
+       <td>Enter Username :  </td>
+       <td><input type="text" readonly="true" id="username" size="20"/> </td>
+   </tr>
+
+   <tr>
+       <td>User email : </td>
+       <td><input type="text" readonly="true" id="email" size="10"/> </td>
+   </tr>
+   </table>
+  </body>
+</html>
